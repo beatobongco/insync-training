@@ -6,24 +6,10 @@ Goal is to discuss how computer works in general.
 
 
 ## Von Neumann Architecture
-* Input/Output
-* Memory
 * Control Unit
 * ALU (Arithmetic Logic Unit)
-
-
-### Input/Output
-I/O are interfaces to the user, e.g.:
-
-* Mouse
-* Monitor
-* Printer
-
-
-### Memory
-Typically refers to the RAM (Random Access Memory).
-
-In the Von Neumann model, the memory contains both program and data.
+* Memory
+* Input/Output
 
 
 ### Control Unit
@@ -38,9 +24,46 @@ Typically part of the CPU.
 Performs calculations.
 
 
+### Memory
+In the Von Neumann model, the memory contains both program and data and doesn't
+distinguish between the two.
+
+Typically refers to the RAM (Random Access Memory). But it can also refer to the
+caches and, to some extent, secondary storage (e.g. hard disk).
+
+
+### Input/Output
+I/O are external sources of data, such as storage or interfaces to the user,
+e.g.:
+
+* Hard disk
+* Mouse
+* Monitor
+* Printer
+
+
+### Bus
+Data lines between the different components, the most important of which is the
+memory bus (connection between CPU and memory).
+
+
 ### Von Neumann Bottleneck
-The speed of the computer is limited by the communication between memory & I/O
-(peripherals in general) to the control unit and ALU (the CPU).
+Despite the speed of the CPU and the capacity of the memory, the speed of the
+computation is limited by the bus because the instructions are also stored in
+memory. Instructions and data cannot be accessed at the same time because they
+share a common bus.
+
+Note: Mitigations to this problem will be discussed later.
+
+
+### Current architectures are more complicated now
+But they are still generally based on the Von Neumann model.
+
+Now there are configurations where you have things such as:
+
+* Multiple CPUs
+* Multiple cores
+* External processing units (e.g. GPUs)
 
 
 
