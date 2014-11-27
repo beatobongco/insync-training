@@ -3,6 +3,9 @@
 Note:
 Goal is to discuss how computer works in general.
 
+Some definitions of computer architecture limit it only hardware, but here we'll
+discuss the software parts as well.
+
 
 
 ## Von Neumann Architecture
@@ -178,3 +181,158 @@ instructions (with arguments) roughly corresponds to opcodes.
 
 Note: JMP instructions have long and short variants, in order to account for
 caches.
+
+
+### Function call
+* Stack
+* Arguments
+* Return values
+
+
+### Software interrupt
+Interrupts that are not triggered by an external peripheral.
+
+* Exceptions (e.g. divide by zero).
+* Timers
+* Page fault
+* System call
+
+
+
+## Operating System
+Direct layer between a program and the hardware.
+
+Provides various services like resource management.
+
+Note: Very difficult to program against the hardware directly.
+
+
+### Layers
+<img src="images/Layers.svg" alt="Layers" height="600" />
+
+
+### Resource management
+#### Examples
+* Hard drive access
+* Memory access
+  * Virtual memory
+* CPU scheduling
+* Display
+* Keyboard input
+* Networking
+
+
+### System call
+User-mode programs call to kernel-mode.
+
+Functions that only the OS can do.
+Note that this is different from user privileges (e.g. root access).
+
+Normally, system calls are not invoked directly by programs. There's a
+higher-level library that you use that does for you (e.g. libc, Win32).
+
+Note:
+Modern CPUs can set what the current instruction cannot do. The OS have the
+highest privilege (also called CPU mode), unless the OS is running on top of a
+virtual machine.
+
+Not all functions in these top-level libraries use system calls.
+
+
+### System call
+#### Examples
+* Read/write to/from a file
+  * Filesystem access in general
+* Create a new process
+* Listen to a port
+
+
+### Device driver
+Knows how to communicate to the corresponding device's controllers.
+
+Runs together with the kernel.
+
+Note:
+Since device drivers is part of the "kernel program", it has the same privilege
+as the kernel. It can bypass system calls (and its associated costs) which is
+normally required for performant hardware communication.
+
+With this power comes with responsibility as poor programming can result in the
+whole system crashing. Or worse, as it can also result to permanent damage to
+hardware.
+
+Malicious software, such as rootkits, can be installed via drivers. Since they
+have unrestricted privilege, it's very difficult to detect and get rid of them.
+
+
+### Application Binary Interface
+* Specifies how binary files (e.g. executable files) are layed out, like:
+  * Headers
+  * Code section
+  * Data section
+* Function calling convention
+* How to make system calls
+
+
+
+## Process
+Encapsulates an instance of a program.
+
+* Code
+* Memory
+  * Stack
+  * Heap
+* Handles/descriptors to resources
+* Privileges
+* Process state
+
+
+### Process states
+<img src="images/Process_states.svg" alt="Process states" height="600" />
+Note:
+Signals can be sent to force a process to be suspended (until continued) or
+terminated.
+
+
+### Concurrent execution
+Multi-tasking via process scheduling.
+
+General-purpose operating systems do it _pre-emptively_.
+
+Note:
+Concurrent execution is different from parallel execution (although parallel
+implies concurrent). Parallel execution means that multiple instructions are
+actually being run at the same time, which is only possible with hardware
+support (e.g. multi-core, hyperthreading).
+
+Pre-emptive multi-tasking is done via software interrupts (timers).
+
+
+### Thread
+Smallest stream of instructions
+
+A process always has at least one (the main thread). Multiple threads under the
+same process share everything in that process except their own stacks.
+
+Note:
+Mention lightweight threads like greenlets and goroutines.
+Also mention the dangers of multi-threaded programming.
+
+
+### Sample process life cycle
+Note:
+* Two processes
+* One process has two threads.
+* System call
+* Context switch
+* Blocking call
+* Send signal
+
+
+
+## Further reading
+* Structured Computer Organization by Tanenbaum
+* [LectureCA-all-slides.pdf](http://www.fb9dv.uni-duisburg.de/vs/en/education/dv3/lecture/freinatis/LectureCA-all-slides.pdf)
+Note:
+Tanenbaum is our textbook while at school. Not sure how good it is relative to
+other books, since I haven't read those other books.
