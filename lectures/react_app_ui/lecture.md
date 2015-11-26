@@ -131,6 +131,8 @@ render() {
 
 ## React: JSX
 ```javascript
+// drivebox/core/ideskui/src/js/app/topbar-menu.js
+
 renderMenuItem(item) {
   return (
     <li
@@ -226,7 +228,7 @@ render() {
 getInitialState() {
   return {count: 1, active: True}
 }
-this.setState({count: 2}) // State is now {a: 2, b: True}
+this.setState({count: 2}) // State is now {count: 2, active: True}
 ```
 
 
@@ -260,6 +262,8 @@ this.setState({left: newLeftState})
 
 ## React: `state`
 ```javascript
+// drivebox/core/ideskui/src/js/app/changelog.js
+
 var Release = React.createClass({
   getInitialState() {
     return {
