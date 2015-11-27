@@ -126,31 +126,6 @@ render() {
 ## React: JSX
 * Event delegation behind the scenes
 * React event layer ensures consistency with W3C spec
-* Reuse event handler functions via partial application
-
-
-## React: JSX
-```javascript
-// drivebox/core/ideskui/src/js/app/topbar-menu.js
-
-renderMenuItem(item) {
-  return (
-    <li
-      onClick={this.onMenuClick.bind(null, item.id,
-        item.keepMenuOnClick)}
-      className={cx({
-        [`${item.id}`]: true,
-        'has-separator': item.hasSeparator,
-        'has-icon': item.hasIcon,
-        'disabled': item.disabled,
-      })}
-      key={item.id}
-    >
-      {item.text}
-    </li>
-  )
-}
-```
 
 
 
@@ -294,6 +269,12 @@ var Release = React.createClass({
   },
 })
 ```
+
+
+## React: `state`
+* `state` should be as minimal as possible
+* In general, don't duplicate `props`
+* Derive values during `render` instead of storing in `state`
 
 
 
@@ -714,4 +695,5 @@ render() {
 ## Further reading
 * https://github.com/mikechau/react-primer-draft
 * https://facebook.github.io/react/docs/getting-started.html
+* https://facebook.github.io/react/docs/thinking-in-react.html
 
