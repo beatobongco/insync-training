@@ -361,9 +361,35 @@ The amount of time he spent at his desk was comparatively small, but his concent
 
 
 ## Rule #3: Quit social media
+
+
 * Network tools and social media are diversions that steal your time and attention.
+* Pick your tools and social media usage based on its pros and cons, and not just for _any_ benefit or for fear of missing out.
+
+
+## Law of the vital few
+In many settings, 80 percent of a given effect is due to just 20 percent of the possible causes.
+
+You’re justified in focusing on the top two or three beneficial activities (e.g., social media activities) for each of your life goals.
+
+
+## 30-day trial
+Stop being active on your social networks, then after, evaluate each service as to whether it would’ve made your life better, or if people actually cared that you weren’t using it.
+
+
+Don’t use the Internet to entertain yourself. Instead, put more thought into your leisure time, e.g., structured hobbies. Give your brain a quality alternative.
+
 
 
 ## Rule #4: Drain the shallows
 
+
+* Schedule every minute of your day, don’t go on autopilot!
+* Quantify the depth of every activity.
+* Set a "shallow work budget", usually 30-50 percent of your time.
+
+
+## Fixed-schedule productivity
+* Finish your work by (say) five-thirty.
+* By setting a fixed schedule, you force yourself to work backwards to determine what rules and habits are needed to satisfy that constraint, and to keep yourself organized.
 
